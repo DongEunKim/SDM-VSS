@@ -1,0 +1,962 @@
+# Copyright (c) 2025 SDM-VSS Project
+#
+# 건설기계를 위한 Vehicle Signal Specification (VSS) 트리 구조
+# 
+# 이 파일은 VSS_J1939.dbc 파일을 참고하여 건설기계 특화 신호를 정의합니다.
+# 표준 VSS 구조를 기반으로 하며, 건설기계에 필요한 브랜치와 신호를 추가합니다.
+
+#
+# Vehicle 브랜치 - 건설기계 기본 정보
+#
+Vehicle:
+  type: branch
+  description: 건설기계 차량 데이터
+
+Vehicle.VehicleIdentification:
+  type: branch
+  description: 차량 식별 정보
+
+Vehicle.VehicleIdentification.Type:
+  datatype: string
+  type: attribute
+  description: 건설기계 타입 (Excavator, WheelLoader, SSL, CTL, Dozer, ADT, Forklift)
+
+Vehicle.VehicleIdentification.VIN:
+  datatype: string
+  type: attribute
+  description: 차량 식별 번호
+
+Vehicle.VehicleIdentification.Brand:
+  datatype: string
+  type: attribute
+  description: 제조사 브랜드
+
+Vehicle.VehicleIdentification.Model:
+  datatype: string
+  type: attribute
+  description: 모델명
+
+#
+# Powertrain - 동력전달계 (표준 VSS 확장)
+#
+Vehicle.Powertrain:
+  type: branch
+  description: 동력전달계 데이터
+
+Vehicle.Powertrain.CombustionEngine:
+  type: branch
+  description: 내연기관 데이터
+
+Vehicle.Powertrain.CombustionEngine.Speed:
+  datatype: uint16
+  type: sensor
+  unit: rpm
+  description: 엔진 속도 (RPM)
+
+Vehicle.Powertrain.CombustionEngine.Torque:
+  datatype: int8
+  type: sensor
+  unit: percent
+  description: 엔진 토크 (%)
+
+Vehicle.Powertrain.CombustionEngine.Temperature:
+  datatype: int16
+  type: sensor
+  unit: celsius
+  description: 엔진 온도
+
+Vehicle.Powertrain.CombustionEngine.OilPressure:
+  datatype: uint16
+  type: sensor
+  unit: kPa
+  description: 엔진 오일 압력
+
+Vehicle.Powertrain.PowerMode:
+  type: branch
+  description: 파워 모드 설정
+
+Vehicle.Powertrain.PowerMode.Mode:
+  datatype: string
+  type: actuator
+  description: 파워 모드 (ECO, STANDARD, POWER, POWER_PLUS)
+
+Vehicle.Powertrain.PowerMode.CurrentMode:
+  datatype: string
+  type: sensor
+  description: 현재 파워 모드
+
+Vehicle.Powertrain.Transmission:
+  type: branch
+  description: 변속기 데이터
+
+Vehicle.Powertrain.Transmission.CurrentGear:
+  datatype: int8
+  type: sensor
+  description: 현재 기어 위치
+
+Vehicle.Powertrain.Transmission.SelectedGear:
+  datatype: int8
+  type: sensor
+  description: 선택된 기어
+
+Vehicle.Powertrain.Transmission.GearRatio:
+  datatype: uint16
+  type: sensor
+  description: 기어비
+
+Vehicle.Powertrain.Transmission.OilTemperature:
+  datatype: int16
+  type: sensor
+  unit: celsius
+  description: 변속기 오일 온도
+
+Vehicle.Powertrain.FuelSystem:
+  type: branch
+  description: 연료 시스템 데이터
+
+Vehicle.Powertrain.FuelSystem.Level:
+  datatype: uint8
+  type: sensor
+  unit: percent
+  description: 연료 잔량 (%)
+
+Vehicle.Powertrain.FuelSystem.ConsumptionRate:
+  datatype: uint16
+  type: sensor
+  unit: Lph
+  description: 연료 소비율 (L/h)
+
+Vehicle.Powertrain.FuelSystem.Pressure:
+  datatype: uint16
+  type: sensor
+  unit: kPa
+  description: 연료 압력
+
+Vehicle.Powertrain.TractionBattery:
+  type: branch
+  description: 구동 배터리 (전기/하이브리드)
+
+Vehicle.Powertrain.TractionBattery.StateOfCharge:
+  datatype: uint8
+  type: sensor
+  unit: percent
+  description: 배터리 충전 상태
+
+Vehicle.Powertrain.TractionBattery.Temperature:
+  datatype: int16
+  type: sensor
+  unit: celsius
+  description: 배터리 온도
+
+Vehicle.Powertrain.TractionBattery.Voltage:
+  datatype: uint16
+  type: sensor
+  unit: V
+  description: 배터리 전압
+
+Vehicle.Powertrain.Reservoir:
+  type: branch
+  description: 오일 탱크
+
+Vehicle.Powertrain.Reservoir.Level:
+  datatype: uint8
+  type: sensor
+  unit: percent
+  description: 오일 레벨
+
+Vehicle.Powertrain.Reservoir.Temperature:
+  datatype: int16
+  type: sensor
+  unit: celsius
+  description: 오일 온도
+
+Vehicle.Powertrain.Reservoir.OilQuality:
+  type: branch
+  description: 오일 품질
+
+Vehicle.Powertrain.Reservoir.OilQuality.DielectricConstant:
+  datatype: uint16
+  type: sensor
+  description: 유전 상수
+
+Vehicle.Powertrain.Reservoir.OilQuality.Density:
+  datatype: uint16
+  type: sensor
+  unit: gpcm3
+  description: 오일 밀도
+
+Vehicle.Powertrain.Reservoir.OilQuality.Viscosity:
+  datatype: uint16
+  type: sensor
+  unit: cP
+  description: 오일 점도
+
+#
+# Chassis - 섀시 (표준 VSS 확장)
+#
+Vehicle.Chassis:
+  type: branch
+  description: 섀시 데이터
+
+Vehicle.Chassis.Brake:
+  type: branch
+  description: 제동 시스템
+
+Vehicle.Chassis.Brake.ParkingBrake:
+  datatype: boolean
+  type: sensor
+  description: 주차 브레이크 상태
+
+Vehicle.Chassis.Brake.OilPressure:
+  datatype: uint16
+  type: sensor
+  unit: kPa
+  description: 브레이크 오일 압력
+
+Vehicle.Chassis.Steering:
+  type: branch
+  description: 조향 시스템
+
+Vehicle.Chassis.Steering.Angle:
+  datatype: int16
+  type: sensor
+  unit: degree
+  description: 조향 각도
+
+Vehicle.Chassis.Steering.WheelAngle:
+  datatype: int16
+  type: sensor
+  unit: degree
+  description: 휠 각도
+
+Vehicle.Chassis.Steering.Mode:
+  datatype: string
+  type: sensor
+  description: 조향 모드 (2WHEEL, 4WHEEL_ROUND, 4WHEEL_CRAB)
+
+Vehicle.Chassis.Track:
+  type: branch
+  description: 트랙 시스템 (굴착기, 불도저 등)
+
+Vehicle.Chassis.Track.LeftSpeed:
+  datatype: uint16
+  type: sensor
+  unit: kmh
+  description: 왼쪽 트랙 속도
+
+Vehicle.Chassis.Track.RightSpeed:
+  datatype: uint16
+  type: sensor
+  unit: kmh
+  description: 오른쪽 트랙 속도
+
+Vehicle.Chassis.Wheel:
+  type: branch
+  description: 휠 시스템 (휠로더, ADT 등)
+
+Vehicle.Chassis.Wheel.Speed:
+  datatype: uint16
+  type: sensor
+  unit: kmh
+  description: 휠 속도
+
+#
+# Hydraulics - 하이드로리식 제어 시스템 (신규)
+#
+Vehicle.Hydraulics:
+  type: branch
+  description: 하이드로리식 제어 시스템
+
+Vehicle.Hydraulics.FEHSystem:
+  type: branch
+  description: Full Electric Hydraulic 시스템
+
+Vehicle.Hydraulics.FEHSystem.ElectricMotor:
+  type: branch
+  description: FEH 전기 모터
+
+Vehicle.Hydraulics.FEHSystem.ElectricMotor.Speed:
+  datatype: uint16
+  type: sensor
+  unit: rpm
+  description: FEH 모터 속도
+
+Vehicle.Hydraulics.FEHSystem.ElectricMotor.Torque:
+  datatype: int16
+  type: sensor
+  unit: Nm
+  description: FEH 모터 토크
+
+Vehicle.Hydraulics.FEHSystem.Pump:
+  type: branch
+  description: 하이드로리식 펌프
+
+Vehicle.Hydraulics.FEHSystem.Pump.Pressure:
+  datatype: uint16
+  type: sensor
+  unit: kPa
+  description: 펌프 압력
+
+Vehicle.Hydraulics.FEHSystem.Pump.FlowRate:
+  datatype: uint16
+  type: sensor
+  unit: Lpm
+  description: 펌프 유량 (L/min)
+
+Vehicle.Hydraulics.FEHSystem.PowerManagement:
+  type: branch
+  description: 전력 관리
+
+Vehicle.Hydraulics.FEHSystem.PowerManagement.PowerDistribution:
+  datatype: uint8
+  type: sensor
+  unit: percent
+  description: 전력 분배율
+
+Vehicle.Hydraulics.System:
+  type: branch
+  description: 시스템 전체 상태
+
+Vehicle.Hydraulics.System.Pressure:
+  datatype: uint16
+  type: sensor
+  unit: kPa
+  description: 시스템 압력
+
+Vehicle.Hydraulics.System.Temperature:
+  datatype: int16
+  type: sensor
+  unit: celsius
+  description: 시스템 온도
+
+Vehicle.Hydraulics.System.OilLevel:
+  datatype: uint8
+  type: sensor
+  unit: percent
+  description: 오일 레벨
+
+Vehicle.Hydraulics.Valve:
+  type: branch
+  description: 제어 밸브
+
+Vehicle.Hydraulics.Valve.Position:
+  datatype: uint8
+  type: sensor
+  unit: percent
+  description: 밸브 위치
+
+Vehicle.Hydraulics.Valve.State:
+  datatype: string
+  type: sensor
+  description: 밸브 상태 (BLOCK, EXTEND, RETRACT, FLOAT)
+
+Vehicle.Hydraulics.Cylinder:
+  type: branch
+  description: 실린더 (붐, 암, 버킷 등)
+
+Vehicle.Hydraulics.Cylinder.Boom:
+  type: branch
+  description: 붐 실린더
+
+Vehicle.Hydraulics.Cylinder.Boom.Position:
+  datatype: int16
+  type: sensor
+  unit: mm
+  description: 붐 실린더 위치
+
+Vehicle.Hydraulics.Cylinder.Boom.Speed:
+  datatype: uint16
+  type: sensor
+  unit: mms
+  description: 붐 실린더 속도
+
+Vehicle.Hydraulics.Cylinder.Boom.HeadPressure:
+  datatype: uint16
+  type: sensor
+  unit: bar
+  description: 붐 실린더 헤드 측 압력
+
+Vehicle.Hydraulics.Cylinder.Boom.RodPressure:
+  datatype: uint16
+  type: sensor
+  unit: bar
+  description: 붐 실린더 로드 측 압력
+
+Vehicle.Hydraulics.Cylinder.Arm:
+  type: branch
+  description: 암 실린더
+
+Vehicle.Hydraulics.Cylinder.Arm.Position:
+  datatype: int16
+  type: sensor
+  unit: mm
+  description: 암 실린더 위치
+
+Vehicle.Hydraulics.Cylinder.Arm.Speed:
+  datatype: uint16
+  type: sensor
+  unit: mms
+  description: 암 실린더 속도
+
+Vehicle.Hydraulics.Cylinder.Bucket:
+  type: branch
+  description: 버킷 실린더
+
+Vehicle.Hydraulics.Cylinder.Bucket.Position:
+  datatype: int16
+  type: sensor
+  unit: mm
+  description: 버킷 실린더 위치
+
+Vehicle.Hydraulics.Cylinder.Bucket.Speed:
+  datatype: uint16
+  type: sensor
+  unit: mms
+  description: 버킷 실린더 속도
+
+#
+# 작업 장치 (Work Equipment) - Vehicle 아래 직접 배치
+#
+
+Vehicle.Boom:
+  type: branch
+  description: 붐 (굴착기용)
+
+Vehicle.Boom.Position:
+  type: branch
+  description: 붐 위치
+
+Vehicle.Boom.Position.Angle:
+  datatype: int16
+  type: sensor
+  unit: degree
+  description: 붐 각도
+
+Vehicle.Boom.Position.Length:
+  datatype: uint16
+  type: sensor
+  unit: mm
+  description: 붐 길이
+
+Vehicle.Boom.Speed:
+  datatype: uint16
+  type: sensor
+  unit: mms
+  description: 붐 속도
+
+Vehicle.Boom.Load:
+  datatype: uint16
+  type: sensor
+  unit: kg
+  description: 붐 하중
+
+Vehicle.Boom.Float:
+  type: branch
+  description: 붐 플로트 기능
+
+Vehicle.Boom.Float.BiDirectional:
+  datatype: boolean
+  type: actuator
+  description: 양방향 플로트 활성화
+
+Vehicle.Boom.Float.SingleDirection:
+  datatype: boolean
+  type: actuator
+  description: 단방향 플로트 활성화
+
+Vehicle.Boom.Attachment:
+  type: branch
+  description: 부착물
+
+Vehicle.Arm:
+  type: branch
+  description: 암 (굴착기용)
+
+Vehicle.Arm.Position:
+  type: branch
+  description: 암 위치
+
+Vehicle.Arm.Position.Angle:
+  datatype: int16
+  type: sensor
+  unit: degree
+  description: 암 각도
+
+Vehicle.Arm.Speed:
+  datatype: uint16
+  type: sensor
+  unit: mms
+  description: 암 속도
+
+Vehicle.Arm.Load:
+  datatype: uint16
+  type: sensor
+  unit: kg
+  description: 암 하중
+
+Vehicle.Arm.AngleInfo:
+  datatype: uint8
+  type: sensor
+  unit: degree
+  description: 암 각도 정보
+
+Vehicle.Arm.Attachment:
+  type: branch
+  description: 부착물
+
+Vehicle.Bucket:
+  type: branch
+  description: 버킷 (공통 - 굴착기, 휠로더, SSL, CTL)
+
+Vehicle.Bucket.Position:
+  type: branch
+  description: 버킷 위치
+
+Vehicle.Bucket.Position.Angle:
+  datatype: int16
+  type: sensor
+  unit: degree
+  description: 버킷 각도
+
+Vehicle.Bucket.Load:
+  datatype: uint16
+  type: sensor
+  unit: kg
+  description: 버킷 하중
+
+Vehicle.Bucket.Weighing:
+  type: branch
+  description: 계량 시스템
+
+Vehicle.Bucket.Weighing.Measurement:
+  datatype: uint16
+  type: sensor
+  unit: kg
+  description: 계량 측정값
+
+Vehicle.Bucket.Weighing.Status:
+  datatype: string
+  type: sensor
+  description: 계량 상태 (READY, ESTIMATE, CONFIRM, COMPLETE)
+
+Vehicle.Bucket.Attachment:
+  type: branch
+  description: 부착물 시스템
+
+Vehicle.Bucket.Attachment.TiltRotator:
+  type: branch
+  description: 틸트 로테이터
+
+Vehicle.Bucket.Attachment.TiltRotator.TiltAngle:
+  datatype: int16
+  type: sensor
+  unit: degree
+  description: 틸트 각도
+
+Vehicle.Bucket.Attachment.TiltRotator.RotatorAngle:
+  datatype: int16
+  type: sensor
+  unit: degree
+  description: 로테이터 각도
+
+Vehicle.Swing:
+  type: branch
+  description: 선회 (굴착기용)
+
+Vehicle.Swing.Angle:
+  datatype: int32
+  type: sensor
+  unit: degree
+  description: 선회 각도
+
+Vehicle.Swing.Speed:
+  datatype: uint16
+  type: sensor
+  unit: degs
+  description: 선회 속도
+
+Vehicle.Swing.Attachment:
+  type: branch
+  description: 부착물
+
+Vehicle.Travel:
+  type: branch
+  description: 주행 (굴착기용)
+
+Vehicle.Travel.Speed:
+  datatype: uint16
+  type: sensor
+  unit: kmh
+  description: 주행 속도
+
+Vehicle.Travel.Direction:
+  datatype: string
+  type: sensor
+  description: 주행 방향 (FORWARD, REVERSE, NEUTRAL)
+
+Vehicle.Travel.Mode:
+  datatype: string
+  type: sensor
+  description: 주행 모드 (LOW_SPEED, HIGH_SPEED, AUTO_SPEED)
+
+Vehicle.Travel.TractionControl:
+  type: branch
+  description: 견인 제어
+
+Vehicle.Travel.TractionControl.Mode:
+  datatype: string
+  type: actuator
+  description: 견인 제어 모드 (MAX, CONTROL, SLIP)
+
+Vehicle.Travel.Attachment:
+  type: branch
+  description: 부착물
+
+Vehicle.LiftArm:
+  type: branch
+  description: 리프트 암 (휠로더, SSL, CTL용)
+
+Vehicle.LiftArm.Position:
+  type: branch
+  description: 리프트 암 위치
+
+Vehicle.LiftArm.Position.Height:
+  datatype: uint16
+  type: sensor
+  unit: mm
+  description: 리프트 암 높이
+
+Vehicle.LiftArm.Speed:
+  datatype: uint16
+  type: sensor
+  unit: mms
+  description: 리프트 암 속도
+
+Vehicle.LiftArm.Load:
+  datatype: uint16
+  type: sensor
+  unit: kg
+  description: 리프트 암 하중
+
+Vehicle.LiftArm.Attachment:
+  type: branch
+  description: 부착물
+
+Vehicle.Blade:
+  type: branch
+  description: 블레이드 (불도저용)
+
+Vehicle.Blade.Position:
+  type: branch
+  description: 블레이드 위치
+
+Vehicle.Blade.Position.Height:
+  datatype: int16
+  type: sensor
+  unit: mm
+  description: 블레이드 높이
+
+Vehicle.Blade.Position.Angle:
+  datatype: int16
+  type: sensor
+  unit: degree
+  description: 블레이드 각도
+
+Vehicle.Blade.Position.Tilt:
+  datatype: int16
+  type: sensor
+  unit: degree
+  description: 블레이드 틸트
+
+Vehicle.Blade.AutoMode:
+  datatype: string
+  type: sensor
+  description: 자동 모드 (AUTO_ALLOWED, SUSPEND_AUTO, AUTO_NOT_ALLOWED)
+
+Vehicle.Blade.Attachment:
+  type: branch
+  description: 부착물
+
+#
+# ADAS - 고급 운전자 보조 시스템 (확장)
+#
+Vehicle.ADAS:
+  type: branch
+  description: 고급 운전자 보조 시스템
+
+Vehicle.ADAS.MachineGuidance:
+  type: branch
+  description: 기계 가이던스 시스템
+
+Vehicle.ADAS.MachineGuidance.Mode2D:
+  type: branch
+  description: 2D 기계 가이던스
+
+Vehicle.ADAS.MachineGuidance.Mode2D.GNSSPosition:
+  type: branch
+  description: GNSS 위치
+
+Vehicle.ADAS.MachineGuidance.Mode2D.TargetElevation:
+  datatype: int32
+  type: sensor
+  unit: mm
+  description: 목표 고도
+
+Vehicle.ADAS.MachineGuidance.Mode3D:
+  type: branch
+  description: 3D 기계 제어
+
+Vehicle.ADAS.MachineGuidance.Mode3D.Model3D:
+  datatype: boolean
+  type: sensor
+  description: 3D 모델 활성화
+
+Vehicle.ADAS.MachineGuidance.Mode3D.TargetPosition:
+  type: branch
+  description: 목표 위치
+
+Vehicle.ADAS.MachineGuidance.Mode3D.TargetPosition.X:
+  datatype: float
+  type: sensor
+  unit: m
+  description: 목표 X 좌표
+
+Vehicle.ADAS.MachineGuidance.Mode3D.TargetPosition.Y:
+  datatype: float
+  type: sensor
+  unit: m
+  description: 목표 Y 좌표
+
+Vehicle.ADAS.MachineGuidance.Mode3D.TargetPosition.Z:
+  datatype: float
+  type: sensor
+  unit: m
+  description: 목표 Z 좌표
+
+Vehicle.ADAS.MachineGuidance.VirtualWall:
+  type: branch
+  description: 가상 벽
+
+Vehicle.ADAS.MachineGuidance.VirtualWall.Active:
+  datatype: boolean
+  type: sensor
+  description: 가상 벽 활성화
+
+Vehicle.ADAS.MachineGuidance.VirtualWall.Proximity:
+  datatype: uint16
+  type: sensor
+  unit: mm
+  description: 접근 거리
+
+Vehicle.ADAS.SurroundingAwareness:
+  type: branch
+  description: 주변 환경 인식
+
+Vehicle.ADAS.SurroundingAwareness.HumanDetection:
+  type: branch
+  description: 사람 감지
+
+Vehicle.ADAS.SurroundingAwareness.HumanDetection.Active:
+  datatype: boolean
+  type: sensor
+  description: 사람 감지 활성화
+
+Vehicle.ADAS.SurroundingAwareness.ObjectDetection:
+  type: branch
+  description: 사물 감지
+
+Vehicle.ADAS.SurroundingAwareness.ObjectDetection.Active:
+  datatype: boolean
+  type: sensor
+  description: 사물 감지 활성화
+
+Vehicle.ADAS.EmergencyStop:
+  type: branch
+  description: 비상 정지 시스템
+
+Vehicle.ADAS.EmergencyStop.Button:
+  datatype: boolean
+  type: sensor
+  description: 비상 정지 버튼 상태
+
+Vehicle.ADAS.EmergencyStop.Remote:
+  datatype: boolean
+  type: sensor
+  description: 원격 비상 정지 상태
+
+Vehicle.ADAS.EmergencyStop.Auto:
+  datatype: boolean
+  type: sensor
+  description: 자동 비상 정지 상태
+
+#
+# Connectivity - 연결성 (확장)
+#
+Vehicle.Connectivity:
+  type: branch
+  description: 연결성 데이터
+
+Vehicle.Connectivity.RemoteControl:
+  type: branch
+  description: 원격 제어
+
+Vehicle.Connectivity.RemoteControl.Active:
+  datatype: boolean
+  type: sensor
+  description: 원격 제어 활성화
+
+Vehicle.Connectivity.RemoteControl.RemoteStart:
+  datatype: boolean
+  type: actuator
+  description: 원격 시동
+
+Vehicle.Connectivity.RemoteControl.RemoteStop:
+  datatype: boolean
+  type: actuator
+  description: 원격 정지
+
+Vehicle.Connectivity.DigitalKey:
+  type: branch
+  description: 디지털 키 시스템
+
+Vehicle.Connectivity.DigitalKey.MobileKey:
+  type: branch
+  description: 모바일 키
+
+Vehicle.Connectivity.DigitalKey.MobileKey.Connected:
+  datatype: boolean
+  type: sensor
+  description: 모바일 키 연결 상태
+
+Vehicle.Connectivity.CurrentLocation:
+  type: branch
+  description: 현재 위치 정보
+
+Vehicle.Connectivity.CurrentLocation.GNSSReceiver:
+  type: branch
+  description: GNSS 수신기
+
+Vehicle.Connectivity.CurrentLocation.GNSSReceiver.Latitude:
+  datatype: float
+  type: sensor
+  unit: degree
+  description: 위도
+
+Vehicle.Connectivity.CurrentLocation.GNSSReceiver.Longitude:
+  datatype: float
+  type: sensor
+  unit: degree
+  description: 경도
+
+Vehicle.Connectivity.CurrentLocation.GNSSReceiver.Altitude:
+  datatype: float
+  type: sensor
+  unit: m
+  description: 고도
+
+Vehicle.Connectivity.CurrentLocation.GNSSReceiver.Status:
+  datatype: string
+  type: sensor
+  description: GNSS 상태 (NO_FIX, FIX_2D, FIX_3D, UNKNOWN)
+
+#
+# Body - 차체 (표준 VSS)
+#
+Vehicle.Body:
+  type: branch
+  description: 차체 구성 요소
+
+Vehicle.Body.Lights:
+  type: branch
+  description: 조명 시스템
+
+Vehicle.Body.Lights.WorkLamp:
+  datatype: boolean
+  type: actuator
+  description: 작업등
+
+Vehicle.Body.Lights.TurnSignalLeft:
+  datatype: boolean
+  type: actuator
+  description: 좌측 깜빡이
+
+Vehicle.Body.Lights.TurnSignalRight:
+  datatype: boolean
+  type: actuator
+  description: 우측 깜빡이
+
+Vehicle.Body.Cabin:
+  type: branch
+  description: 운전실 구성 요소
+
+Vehicle.Body.Cabin.HVAC:
+  type: branch
+  description: 공조 시스템
+
+Vehicle.Body.Cabin.HVAC.Temperature:
+  datatype: int16
+  type: actuator
+  unit: celsius
+  description: 운전실 온도 설정
+
+Vehicle.Body.Cabin.Display:
+  type: branch
+  description: 디스플레이
+
+Vehicle.Body.Cabin.Display.Screen:
+  type: branch
+  description: 화면
+
+Vehicle.Body.Cabin.Display.Screen.Brightness:
+  datatype: uint8
+  type: actuator
+  unit: percent
+  description: 화면 밝기
+
+#
+# Diagnostics - 진단 (표준 VSS 확장)
+#
+Vehicle.Diagnostics:
+  type: branch
+  description: 진단 데이터
+
+Vehicle.Diagnostics.EngineDiagnostics:
+  type: branch
+  description: 엔진 진단
+
+Vehicle.Diagnostics.HydraulicDiagnostics:
+  type: branch
+  description: 하이드로리식 시스템 진단
+
+Vehicle.Diagnostics.WorkEquipmentDiagnostics:
+  type: branch
+  description: 작업 장치 진단
+
+#
+# Service - 서비스 (표준 VSS)
+#
+Vehicle.Service:
+  type: branch
+  description: 서비스 데이터
+
+#
+# OBD - OBD (표준 VSS)
+#
+Vehicle.OBD:
+  type: branch
+  description: OBD 데이터
+
+#
+# Driver - 운전자 (표준 VSS)
+#
+Vehicle.Driver:
+  type: branch
+  description: 운전자 데이터
+
+#
+# Exterior - 외부 (표준 VSS)
+#
+Vehicle.Exterior:
+  type: branch
+  description: 외부 정보
+

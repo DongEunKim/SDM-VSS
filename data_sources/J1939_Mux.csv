@@ -1,0 +1,18 @@
+﻿NAME,MESSAGE,PGN_ACYM,FRAME_ID,DLC,NODE,CYCLE,PGN_COMMENT,PRIORITY,PGN,SOURCE_ADDRESS,CHANNEL,MUX,BYTE_ORDER,LENGTH_BIT,INITIAL_VALUE,SCALE,OFFSET,MIN,MAX,UNIT,START,VALUE_TYPE,VALUE_TABLE,SPN,SIG_COMMENT,VSS
+GP_CMD_MCU_ID,GP_CMD_MCU,,,,,,,,0xEF21,0x28,,M,,20,0,1,0,0,255,,0,,"516262=SetOpt_Breaker;
+516262=SetTruck_WeightTarget;
+516946=SetTruck_Name;
+516947=SetMaterial_Density;
+516949=SetMaterial_Name;
+524289=SetTruck;
+524290=SetMaterial",,,
+SetOpt_Breaker,GP_CMD_MCU,,,,,,,,0xEF21,0x28,,m516262,,1,,,,,,,24,,,516262,,
+SetTruck_WeightTarget,GP_CMD_MCU,,,,,,,,0xEF21,0x28,,m516946,,16,,,,,,,24,,,516946,,
+SetTruck_Name,GP_CMD_MCU,,,,,,,,0xEF21,0x28,,m516949,,200,,,,,,,24,,,516949,,
+SetTruck_WeightTarget,GP_CMD_MCU,,,,,,,,0xEF21,0x28,,m524289,,16,,,,,,,24,,,516946,,
+SetTruck_Name,GP_CMD_MCU,,,,,,,,0xEF21,0x28,,m524289,,200,,,,,,,40,,,516949,,
+SetMaterial_Density,GP_CMD_MCU,,,,,,,,0xEF21,0x28,,m524290,,16,,,,,,,24,,,516947,,
+SetMaterial_Name,GP_CMD_MCU,,,,,,,,0xEF21,0x28,,m524290,,200,,,,,,,40,,,516950,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,
+Cmd_AckNack,MCU_ACK,,,,,,,,0xE8FF,0x21,,,,8,,,,,,,0,,0=Ack;1=Nack,,,
+Cmd_CmdIdRequested,MCU_ACK,,,,,,,,0xE8FF,0x21,,,,19,,,,,,,40,,0xEF21 --> 516262 (SPN/GSPN),,,

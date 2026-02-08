@@ -1,0 +1,27 @@
+# File: specs/00_common/10_excavator/12_electric/01_CEABC/manifest.yaml
+
+# [프로젝트 설정]
+# 이 이름으로 dist 폴더가 생성됨 (예: dist/Excavator_CEABC/)
+project_name: "Excavator_CEABC"  
+version: "1.0.0"
+
+# [전역 정의]
+# SLOT_Master와 ValTable_Master는 각 엑셀 파일 내의 시트로 포함됩니다.
+# 전역적으로 공유되는 기본 정의가 필요한 경우에만 별도 파일로 관리합니다.
+# 빈 리스트도 허용됩니다 (각 레벨의 엑셀 파일 내 시트로 충분한 경우)
+base_definitions: []
+# 전역 정의 파일이 필요한 경우 아래와 같이 추가:
+# base_definitions:
+#   - "specs/slot_master.xlsx"      # 전역 SLOT 정의
+#   - "specs/valtable_master.xlsx"  # 전역 ValTable 정의
+
+# [상속 구조]
+# Level 0 → Level 4 순서로 기입 필수
+# 뒤에 오는 파일이 앞의 내용을 덮어씀 (Last Write Wins)
+inheritance:
+  - "specs/j1939_standard.xlsx"                                    # Level 0: J1939 표준
+  - "specs/00_common/common_spec.xlsx"                             # Level 1: 전사 공통
+  - "specs/00_common/10_excavator/excavator_spec.xlsx"             # Level 2: 굴착기 제품군
+  - "specs/00_common/10_excavator/12_electric/electric_spec.xlsx" # Level 3: 전기 굴착기
+  - "specs/00_common/10_excavator/12_electric/01_CEABC/CEABC_spec.xlsx" # Level 4: CEABC 모델
+

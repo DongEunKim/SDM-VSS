@@ -1,0 +1,154 @@
+slot_id,factor,offset,min,max,unit,description,vss_unit,vss_a,vss_b
+1,5.0,0.0,0.0,1250.0,kPa,SAEpr11 (Pressure),Pa,1000.0,0.0
+2,8.0,0.0,0.0,2000.0,kPa,SAEpr13 (Pressure),Pa,1000.0,0.0
+3,1.0,0.0,0.0,250.0,h,SAEtm11 (Time),s,3600.0,0.0
+4,1.0,-125.0,-125.0,125.0,h,SAEtm10 (Time),s,3600.0,0.0
+5,1.0,-32127.0,-32127.0,32128.0,h,SAEtm12 (Time),s,3600.0,0.0
+6,1.0,0.0,0.0,4211081215.0,s,SAEtm06 (Time),s,1.0,0.0
+7,1e-07,-210.0,-210.0,211.1081215,°,SAEad01 (Angle/Direction),degree,1.0,0.0
+8,0.0078125,-200.0,-200.0,301.99,°,SAEad04 (Angle/Direction),degree,1.0,0.0
+11,1.0,-125.0,-125.0,125.0,°,SAEad06 (Angle/Direction),degree,1.0,0.0
+12,1.0,0.0,0.0,64255.0,,SAEct04 (Count),,1.0,0.0
+13,0.1,-3200.0,-3200.0,3225.5,mm,SAEds03 (Distance),m,0.001,0.0
+14,0.1,0.0,0.0,6425.5,mm,SAEds04 (Distance),m,0.001,0.0
+15,1.0,-125.0,-125.0,125.0,m,SAEds08 (Distance),m,1.0,0.0
+17,0.001953125,0.0,0.0,125.498046875,km,SAEeg01 (Economy; gaseous),m,1000.0,0.0
+18,0.05,0.0,0.0,3212.75,kg,SAEfg01 (Flow rate; gaseous),kg,1.0,0.0
+20,0.5,0.0,0.0,2105540607.5,l,SAEful01 (Fuel Used; liquid),l,1.0,0.0
+21,0.5,0.0,0.0,2105540607.5,kg,SAEfug01 (Fuel Used; gaseous),kg,1.0,0.0
+23,0.01,0.0,0.0,642.55,,SAEgr01 (Gear Ratio),,1.0,0.0
+26,1.0,0.0,0.0,250.0,mm²,SAEkv01 (Kinematic viscosity),mm²,1.0,0.0
+27,0.5,0.0,0.0,32127.5,kg,SAEma11 (Mass),kg,1.0,0.0
+28,2.0,0.0,0.0,128510.0,kg,SAEma02 (Mass),kg,1.0,0.0
+30,0.0025,0.0,0.0,160.6375,%,SAEpc01 (Percent; position/level),percent,1.0,0.0
+33,1.0,0.0,0.0,250.0,,SAEre01 (Record),,1.0,0.0
+34,1000.0,0.0,0.0,4211081215000.0,,SAErv01 (Revolutions),,1.0,0.0
+35,1.0,0.0,0.0,255.0,,SAEsa01 (Source Address),,1.0,0.0
+37,5.0,-160635.0,-160635.0,160640.0,km,SAEds11 (Distance),m,1000.0,0.0
+38,5.0,0.0,0.0,21055406075.0,m,SAEds09 (Distance),m,1.0,0.0
+42,0.05,0.0,0.0,3212.75,l,SAEfl01 (Flow rate; liquid),l,1.0,0.0
+43,5.0,0.0,0.0,321275.0,N,SAEfr01 (Force),n,1.0,0.0
+44,0.4,0.0,0.0,100.0,%,SAEpc03 (Percent; position/level),percent,1.0,0.0
+45,1.0,-125.0,-125.0,125.0,%,SAEpc05 (Percent; position/level),percent,1.0,0.0
+46,1.0,0.0,0.0,250.0,%,SAEpc06 (Percent; position/level),percent,1.0,0.0
+47,4.0,0.0,0.0,1000.0,kPa,SAEpr10 (Pressure),Pa,1000.0,0.0
+48,0.05,0.0,0.0,12.5,kPa,SAEpr02 (Pressure),Pa,1000.0,0.0
+49,16.0,0.0,0.0,4000.0,kPa,SAEpr14 (Pressure),Pa,1000.0,0.0
+50,0.5,0.0,0.0,32127.5,kPa,SAEpr06 (Pressure),Pa,1000.0,0.0
+51,0.00390625,0.0,0.0,250.996,MPa,SAEpr09 (Pressure),Pa,1000000.0,0.0
+52,0.0078125,-250.0,-250.0,251.99,kPa,SAEpr01 (Pressure),Pa,1000.0,0.0
+53,2.0,0.0,0.0,500.0,kPa,SAEpr07 (Pressure),Pa,1000.0,0.0
+54,0.5,0.0,0.0,125.0,kPa,SAEpr05 (Pressure),Pa,1000.0,0.0
+57,0.01,0.0,0.0,642.55,ms,SAEtm01 (Time),s,0.001,0.0
+58,0.05,0.0,0.0,210554060.75,h,SAEtm09 (Time),s,3600.0,0.0
+59,0.1,0.0,0.0,25.0,s,SAEtm03 (Time),s,1.0,0.0
+60,0.25,0.0,0.0,62.5,days,SAEcd01 (Calendar; days),s,86400.0,0.0
+61,1.0,0.0,0.0,250.0,min,SAEtm08 (Time),s,60.0,0.0
+62,1.0,0.0,0.0,250.0,month,SAEcm01 (Calendar; months),s,2592000.0,0.0
+63,0.25,0.0,0.0,62.5,s,SAEtm04 (Time),s,1.0,0.0
+65,1.0,-125.0,-125.0,125.0,week,SAEcw01 (Calendar; weeks),week,1.0,0.0
+66,1.0,1985.0,1985.0,2235.0,year,SAEcy01 (Calendar; years),s,31536000.0,0.0
+67,1.0,-40.0,-40.0,210.0,°C,SAEtp01 (Temperature),celsius,1.0,0.0
+68,0.03125,-273.0,-273.0,1734.96875,°C,SAEtp02 (Temperature),celsius,1.0,0.0
+70,1.0,0.0,0.0,64255.0,Nm,SAEtq02 (Torque),Nm,1.0,0.0
+71,0.00390625,0.0,0.0,250.996,km,SAEvl02 (Velocity; linear),m,1000.0,0.0
+72,0.0078125,-250.0,-250.0,251.992,km,SAEvl03 (Velocity; linear),m,1000.0,0.0
+73,1.0,0.0,0.0,250.0,km,SAEvl05 (Velocity; linear),m,1000.0,0.0
+74,0.0625,-7.8125,-7.8125,7.8125,km,SAEvl04 (Velocity; linear),m,1000.0,0.0
+75,0.5,0.0,0.0,2105540607.5,l,SAEvm1 (Volume),l,1.0,0.0
+76,0.125,0.0,0.0,8031.875,rpm,SAEvr01 (Velocity; rotational),rpm,1.0,0.0
+77,4.0,0.0,0.0,257020.0,rpm,SAEvr03 (Velocity; rotational),rpm,1.0,0.0
+78,0.5,0.0,0.0,32127.5,rpm,SAEvr02 (Velocity; rotational),rpm,1.0,0.0
+80,0.05,0.0,0.0,3212.75,V,SAEev01 (Electrical Voltage),v,1.0,0.0
+81,1.0,0.0,0.0,4211081215.0,,SAEba01 (Brake Applications),,1.0,0.0
+82,0.0001,0.0,0.0,6.4255,,SAEsg01 (Specific Gravity),,1.0,0.0
+83,0.1,0.0,0.0,25.0,Mohm*m,SAEsr01 (Specific Resistance),mohm*m,1.0,0.0
+84,1.0,0.0,0.0,250.0,,SAEst01 (Step),,1.0,0.0
+85,0.1,0.0,0.0,6425.5,kPa,SAEpr03 (Pressure),Pa,1000.0,0.0
+86,2.0,0.0,0.0,1.0,,SAEbs01 (Bit Field),,1.0,0.0
+87,4.0,0.0,0.0,3.0,,SAEbs02 (Bit Field),,1.0,0.0
+88,8.0,0.0,0.0,7.0,,SAEbs03 (Bit Field),,1.0,0.0
+89,16.0,0.0,0.0,15.0,,SAEbs04 (Bit Field),,1.0,0.0
+90,32.0,0.0,0.0,31.0,,SAEbs05 (Bit Field),,1.0,0.0
+91,64.0,0.0,0.0,63.0,,SAEbs06 (Bit Field),,1.0,0.0
+92,128.0,0.0,0.0,127.0,,SAEbs07 (Bit Field),,1.0,0.0
+93,256.0,0.0,0.0,255.0,,SAEbs08 (Bit Field),,1.0,0.0
+94,1.0,0.0,0.0,255.0,,SAEatf0001 (ASCII; text (fixed length)),,1.0,0.0
+95,1.0,0.0,0.0,250.0,m,SAEds07 (Distance),m,1.0,0.0
+96,0.0078125,-250.0,-250.0,251.992,,SAErc01 (Road Curvature),,1.0,0.0
+97,32.0,0.0,0.0,8000.0,rpm,SAEvr05 (Velocity; rotational),rpm,1.0,0.0
+99,1.0,-125.0,-125.0,125.0,min,SAEtm07 (Time),s,60.0,0.0
+100,1.0,0.0,0.0,4294967295.0,s,SLOT for sec unit,s,1.0,0.0
+101,1.0,0.0,0.0,250.0,,SAEgv02 (Gear Value),,1.0,0.0
+102,1.0,0.0,0.0,255.0,,SLOT for binary unit,,1.0,0.0
+103,1.0,0.0,0.0,255.0,,SLOT for nan unit,,1.0,0.0
+106,2.0,0.0,0.0,128510.0,kPa,SAEpr08 (Pressure),Pa,1000.0,0.0
+107,2.0,0.0,0.0,128510.0,W,SAEpw02 (Power; Real),w,1.0,0.0
+114,0.0001220703125,-3.92,-3.92,3.92,rad,SAEva01 (Velocity; angular),rad,1.0,0.0
+115,0.00048828125,-15.687,-15.687,15.687,m,SAEac01 (Acceleration),m,1.0,0.0
+116,1.0,0.0,0.0,16777215.0,,SAEpg00 (PGN),,1.0,0.0
+117,0.1,-3.0,-3.0,3.0,m,SLOT for m unit,m,1.0,0.0
+118,0.2,-12.0,-12.0,12.0,mps,SLOT for mps unit,mps,1.0,0.0
+119,1.0,0.0,0.0,255.0,,SLOT for nan unit,,1.0,0.0
+120,1.0,0.0,0.0,255.0,,SAEcb01 (Control byte),,1.0,0.0
+121,1.0,0.0,0.0,255.0,,SAEgf01 (Group Function),,1.0,0.0
+122,2.0,0.0,0.0,32899070.0,kg,SAEma06 (Mass),kg,1.0,0.0
+123,1.0,0.0,0.0,255.0,,SLOT for nan unit,,1.0,0.0
+125,0.001,0.0,0.0,64.255,m,SAEvl01 (Velocity; linear),m,1.0,0.0
+127,10.0,-320000.0,-320000.0,322550.0,N,SAEfr02 (Force),n,1.0,0.0
+128,0.8,-100.0,-100.0,100.0,%,SAEpc04 (Percent; position/level),percent,1.0,0.0
+129,1.0,0.0,0.0,250.0,,SAEct02 (Count),,1.0,0.0
+131,1.0,0.0,0.0,255.0,,SAEatf0002 (ASCII; text (fixed length)),,1.0,0.0
+132,1.0,0.0,0.0,64255.0,ms,SAEtm02 (Time),s,0.001,0.0
+135,1000.0,-100.0,-100.0,150.0,N,SAEfr03 (Force),n,1.0,0.0
+136,0.00390625,-125.0,-125.0,125.0,°,SAEad07 (Angle/Direction),degree,1.0,0.0
+138,0.125,0.0,0.0,8031.875,kPa,SAEpr04 (Pressure),Pa,1000.0,0.0
+140,0.1,-12.5,-12.5,12.5,m,SAEac02 (Acceleration),m,1.0,0.0
+141,1.0,-32.0,-32.0,29.0,,SAEct01 (Count),,1.0,0.0
+147,1.0,-2000000000.0,-2000000000.0,2211081215.0,W,SAEpw01 (Power; Real),w,1.0,0.0
+150,1.0,0.0,0.0,4211081215.0,kWh,SAEen01 (Energy),kwh,1.0,0.0
+153,0.00390625,0.0,0.0,50.0,bar,SLOT for bar unit,Pa,100000.0,0.0
+154,1.0,0.0,,,,SAEpd01 (Proprietary Data),,1.0,0.0
+165,0.5,0.0,0.0,4294967295.0,L,SLOT for liters unit,l,1.0,0.0
+167,1.0,-32000.0,-32000.0,32255.0,mm,SLOT for mm unit,m,0.001,0.0
+170,0.1,0.0,0.0,20.0,mmps,SLOT for mmps unit,mmps,1.0,0.0
+171,3.0517578125e-05,-250.0,-250.0,252.0,°,SLOT for deg unit,degree,1.0,0.0
+172,0.00390625,0.0,0.0,250.99609375,km/h,SLOT for km/h unit,km/h,1.0,0.0
+174,0.0078125,-200.0,-200.0,301.99,°,SLOT for deg unit,degree,1.0,0.0
+175,0.0078125,-251.0,-251.0,250.99,%,SLOT for percent unit,percent,1.0,0.0
+176,10.0,0.0,0.0,2500.0,mm,SLOT for mm unit,m,0.001,0.0
+179,1.0,0.0,0.0,255.0,,SLOT for ASCII unit,,1.0,0.0
+182,2.0,0.0,0.0,8589934590.0,kg,SLOT for kg unit,kg,1.0,0.0
+183,0.01,-20.0,-20.0,20.0,mm,SLOT for mm unit,m,0.001,0.0
+184,1.0,0.0,0.0,1000.0,mA,SLOT for mA unit,A,0.001,0.0
+185,0.25,0.0,0.0,500.0,bar,SLOT for bar unit,Pa,100000.0,0.0
+186,0.25,0.0,0.0,50.0,bar,SLOT for bar unit,Pa,100000.0,0.0
+187,1.0,0.0,0.0,1023.0,mA,SLOT for mA unit,A,0.001,0.0
+189,1.0,0.0,0.0,4095.0,bar,SLOT for bar unit,Pa,100000.0,0.0
+190,0.5,0.0,0.0,127.5,%,SLOT for percent unit,percent,1.0,0.0
+191,-0.5,0.0,-125.0,125.0,%,SLOT for percent unit,percent,1.0,0.0
+192,8.0,800.0,800.0,2000.0,rpm,SLOT for Rpm unit,rpm,1.0,0.0
+194,1.0,0.0,0.0,10000.0,mV,SLOT for mV unit,V,0.001,0.0
+195,1.0,-40.0,-40.0,250.0,°C,SLOT for Celsius unit,celsius,1.0,0.0
+198,1.0,0.0,0.0,255.0,,SLOT for nan unit,,1.0,0.0
+200,1.0,0.0,0.0,255.0,,SLOT for ASCII-VN unit,,1.0,0.0
+201,1.0,0.0,0.0,255.0,,SLOT for ASCII-FN unit,,1.0,0.0
+202,1.0,0.0,,,,Diagnostic (nan),,1.0,0.0
+203,10.0,0.0,0.0,10000.0,ccps,SLOT for ccps unit,ccps,1.0,0.0
+205,0.1,0.0,0.0,102.0,%,SAEpc02 (Percent; position/level),percent,1.0,0.0
+206,5.12e-05,0.0,0.0,3.289856,s,SAEtm13 (Time),s,1.0,0.0
+207,1.0,0.0,0.0,16777215.0,,SAEct06 (Count (no error; N/A)),,1.0,0.0
+209,1.0,0.0,0.0,4294967295.0,,SAEct07 (Count (no error; N/A)),,1.0,0.0
+211,1.0,0.0,0.0,64255.0,mAh,SAEca01 (Capacity; Battery),mah,1.0,0.0
+212,1.0,0.0,0.0,255.0,,SAEatf0004 (ASCII; text (fixed length)),,1.0,0.0
+215,1.0,0.0,0.0,31.0,,SAEfm00 (FMI),,1.0,0.0
+218,2048.0,0.0,0.0,2047.0,,SAEbs11 (Bit Field),,1.0,0.0
+220,1.0,0.0,0.0,15.0,,SAEct08 (Count (no error; N/A)),,1.0,0.0
+221,0.01,0.0,0.0,642.55,V,SAEev03 (Electrical Voltage),v,1.0,0.0
+222,0.5,0.0,0.0,32127.5,l,SAEvm2 (Volume),l,1.0,0.0
+223,1.0,0.0,0.0,64255.0,rpm,SAEvr06 (Velocity; rotational),rpm,1.0,0.0
+224,0.1,0.0,0.0,6425.5,h,SAEtm14 (Time),s,3600.0,0.0
+254,0.25,0.0,0.0,62.5,%,SAEpc15 (Percent; concentration),percent,1.0,0.0
+262,0.2,0.0,0.0,12851.0,kg,SAEfg02 (Flow rate; gaseous),kg,1.0,0.0
+500,1.0,0.0,0.0,255.0,,SLOT for nan unit,,1.0,0.0
+501,0.03125,-273.0,-273.0,1734.96875,°C,SLOT for celsius unit,celsius,1.0,0.0
